@@ -27,7 +27,7 @@ jobs:
     - name: List files between building and running
       run: ls
     - name: Run
-      run: java Minimax
+      run: java TestMinimax
     - name: List files between running and cleaning
       run: ls
     - name: Clean
