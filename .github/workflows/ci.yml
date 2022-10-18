@@ -1,0 +1,36 @@
+# This workflow was based on https://github.com/actions/starter-workflows/blob/main/ci/ant.yml
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-ant
+
+name: Java CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+    - name: List files before building
+      run: ls
+    - name: Build
+      run: javac *.java
+    - name: List files between building and running
+      run: ls
+    - name: Run
+      run: java Minimax
+    - name: List files between running and cleaning
+      run: ls
+    - name: Clean
+      run: rm -v *.class
+    - name: List files after cleaning
+      run: ls
