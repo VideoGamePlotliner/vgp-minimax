@@ -20,17 +20,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: List files before building
-      run: ls
     - name: Build
       run: javac *.java
-    - name: List files between building and running
-      run: ls
     - name: Run
       run: java TestMinimax
-    - name: List files between running and cleaning
-      run: ls
-    - name: Clean
-      run: rm -v *.class
-    - name: List files after cleaning
-      run: ls
