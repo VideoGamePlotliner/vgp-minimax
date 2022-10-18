@@ -289,7 +289,7 @@ public class MinimaxNode_TicTacToe extends MinimaxNode {
 
     @Override
     public String toString() {
-        return "{" +
+        return "MinimaxNode_TicTacToe{" +
                 "isMaxPly=" + isMaxPly() +
                 ", grid=" + Arrays.deepToString(grid) +
                 '}';
